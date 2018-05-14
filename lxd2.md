@@ -41,3 +41,7 @@ Create machine containers with static IPs (https://stgraber.org/2016/10/27/netwo
     $ lxc network attach lxdbr0 host1 eth0
     $ lxc config device set host1 eth0 ipv4.address 10.41.41.2
     $ lxc start host1
+
+Tip for scripting connecting to the box and waiting for networking:
+
+    lxc exec host1 -- systemctl isolate multi-user.target
